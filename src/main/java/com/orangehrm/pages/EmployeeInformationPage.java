@@ -1,5 +1,6 @@
 package com.orangehrm.pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.orangehrm.entity.EmployeeDetails;
 
@@ -21,19 +22,19 @@ public class EmployeeInformationPage {
   private static final SelenideElement MIDDLE_NAME = $(byName("middleName"));
   private static final SelenideElement SAVE_BUTTON = $(byText("Save"));
   private static final SelenideElement IMAGE = $(byXpath("//input[@type='file']"));
-  private static final SelenideElement SUCCESS_MESSAGE = $$(byText("Success")).first();
+  private static final ElementsCollection SUCCESS_MESSAGE = $$(byText("Success"));
 
   public EmployeeInformationPage addNewEmployee(EmployeeDetails employee){
     ADD_EMPLOYEE_BUTTON.shouldBe(visible).click();
     FIRST_NAME.shouldBe(visible).setValue(employee.getFirstName());
     LAST_NAME.shouldBe(visible).setValue(employee.getLastName());
     MIDDLE_NAME.shouldBe(visible).setValue(employee.getMiddleName());
-    IMAGE.shouldBe(enabled).uploadFromClasspath("images/browserstack.jpeg");
+    IMAGE.shouldBe(enabled).uploadFromClasspath(employee.getProfilePicturePath());
     SAVE_BUTTON.shouldBe(enabled).click();
     return this;
   }
 
   public void checkWhetherEmployeeCreatedSuccessfully(){
-    SUCCESS_MESSAGE.shouldHave(visible, text("Success"));
+    SUCCESS_MESSAGE.first().shouldHave(visible, text("Success"));
   }
 }

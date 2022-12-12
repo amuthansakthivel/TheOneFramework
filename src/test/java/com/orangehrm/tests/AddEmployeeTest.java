@@ -1,34 +1,24 @@
 package com.orangehrm.tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.junit5.TextReportExtension;
 import com.orangehrm.entity.EmployeeDetails;
-import com.orangehrm.pages.EmployeeInformationPage;
+import com.orangehrm.entity.LoginDetails;
 import com.orangehrm.pages.LoginPage;
+import com.orangehrm.testdata.EmployeeTestData;
+import com.orangehrm.testdata.LoginTestData;
+import com.orangehrm.tests.base.TestSetup;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import uk.co.jemos.podam.api.PodamFactory;
-import uk.co.jemos.podam.api.PodamFactoryImpl;
 
-import static com.codeborne.selenide.Selenide.open;
+class AddEmployeeTest extends TestSetup {
 
-class AddEmployeeTest {
-
-  private PodamFactory factory = new PodamFactoryImpl();
+  private final EmployeeDetails employeeDetails = EmployeeTestData.getRandomEmployeeDetails();
+  private final LoginDetails loginDetails = LoginTestData.getValidLoginDetails();
 
   @Test
   void testAddEmployee() {
-    EmployeeDetails employee = factory.manufacturePojo(EmployeeDetails.class);
-    open("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-    new LoginPage()
-        .loginToApplication()
-        .getLeftMenuComponent()
-        .selectAMenuFromLeftMenuBar("PIM");
-
-    new EmployeeInformationPage()
-        .addNewEmployee(employee)
+    LoginPage.getInstance()
+        .loginToApplication(loginDetails)
+        .navigateToEmployeeInformationPage()
+        .addNewEmployee(employeeDetails)
         .checkWhetherEmployeeCreatedSuccessfully();
-
   }
 }
