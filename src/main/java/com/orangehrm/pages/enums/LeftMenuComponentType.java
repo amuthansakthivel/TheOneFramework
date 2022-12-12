@@ -1,4 +1,4 @@
-package com.orangehrm;
+package com.orangehrm.pages.enums;
 
 public enum LeftMenuComponentType {
 

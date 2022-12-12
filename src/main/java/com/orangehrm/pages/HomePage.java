@@ -2,7 +2,7 @@ package com.orangehrm.pages;
 
 import com.orangehrm.pages.pagecomponents.LeftMenuComponent;
 
-import static com.orangehrm.LeftMenuComponentType.PIM;
+import static com.orangehrm.pages.enums.LeftMenuComponentType.PIM;
 
 public class HomePage {
 
