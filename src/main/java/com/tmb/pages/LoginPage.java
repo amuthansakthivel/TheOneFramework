@@ -1,7 +1,7 @@
-package com.orangehrm.pages;
+package com.tmb.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.orangehrm.entity.LoginDetails;
+import com.tmb.entity.LoginDetails;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;

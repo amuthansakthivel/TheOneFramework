@@ -1,14 +1,14 @@
-package com.orangehrm.tests;
+package com.tmb.tests.web;
 
-import com.orangehrm.entity.EmployeeDetails;
-import com.orangehrm.entity.LoginDetails;
-import com.orangehrm.pages.LoginPage;
-import com.orangehrm.testdata.EmployeeTestData;
-import com.orangehrm.testdata.LoginTestData;
-import com.orangehrm.tests.base.TestSetup;
+import com.tmb.entity.EmployeeDetails;
+import com.tmb.entity.LoginDetails;
+import com.tmb.pages.LoginPage;
+import com.tmb.testdata.EmployeeTestData;
+import com.tmb.testdata.LoginTestData;
+import com.tmb.tests.base.WebTestSetup;
 import org.junit.jupiter.api.Test;
 
-class AddEmployeeTest extends TestSetup {
+class AddEmployeeTest extends WebTestSetup {
 
   private final EmployeeDetails employeeDetails = EmployeeTestData.getRandomEmployeeDetails();
   private final LoginDetails loginDetails = LoginTestData.getValidLoginDetails();

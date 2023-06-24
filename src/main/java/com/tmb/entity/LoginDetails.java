@@ -1,4 +1,4 @@
-package com.orangehrm.entity;
+package com.tmb.entity;
 
 import lombok.Data;
 import uk.co.jemos.podam.common.PodamStringValue;

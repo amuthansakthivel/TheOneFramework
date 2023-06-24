@@ -13,15 +13,27 @@
         <maven.compiler.target>11</maven.compiler.target>
         <allure.version>2.22.0</allure.version>
         <aspectj.version>1.9.9.1</aspectj.version>
+        <selenide.version>6.15.0</selenide.version>
+        <junit.version>5.8.2</junit.version>
+        <lombok.version>1.18.22</lombok.version>
+        <podam.version>7.2.11.RELEASE</podam.version>
+        <owner.version>1.0.12</owner.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>${owner.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-selenide</artifactId>
@@ -30,25 +42,27 @@
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>6.13.0</version>
+            <artifactId>selenide-appium</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${lombok.version}</version>
         </dependency>
 
         <dependency>
             <groupId>uk.co.jemos.podam</groupId>
             <artifactId>podam</artifactId>
-            <version>7.2.11.RELEASE</version>
+            <version>${podam.version}</version>
         </dependency>
     </dependencies>
 

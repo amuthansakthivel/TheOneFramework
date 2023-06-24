@@ -1,8 +1,8 @@
-package com.orangehrm.pages;
+package com.tmb.pages;
 
-import com.orangehrm.pages.pagecomponents.LeftMenuComponent;
+import com.tmb.pages.pagecomponents.LeftMenuComponent;
 
-import static com.orangehrm.pages.enums.LeftMenuComponentType.PIM;
+import static com.tmb.pages.enums.LeftMenuComponentType.PIM;
 
 public class HomePage {
 

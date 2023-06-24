@@ -1,6 +1,6 @@
-package com.orangehrm.testdata;
+package com.tmb.testdata;
 
-import com.orangehrm.entity.EmployeeDetails;
+import com.tmb.entity.EmployeeDetails;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 

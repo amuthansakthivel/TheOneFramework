@@ -1,8 +1,8 @@
-package com.orangehrm.pages;
+package com.tmb.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.orangehrm.entity.EmployeeDetails;
+import com.tmb.entity.EmployeeDetails;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.text;

@@ -1,6 +1,6 @@
-package com.orangehrm.pages.pagecomponents;
+package com.tmb.pages.pagecomponents;
 
-import com.orangehrm.pages.enums.LeftMenuComponentType;
+import com.tmb.pages.enums.LeftMenuComponentType;
 import lombok.SneakyThrows;
 
 import java.util.function.Consumer;
