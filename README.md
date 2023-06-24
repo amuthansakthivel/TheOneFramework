@@ -9,3 +9,9 @@
 To generate allure report after execution
 
 ```allure serve ./target/allure-results```
+
+Download apps from here
+
+https://github.com/saucelabs/my-demo-app-rn/releases
+
+https://github.com/appium/android-apidemos/releases
