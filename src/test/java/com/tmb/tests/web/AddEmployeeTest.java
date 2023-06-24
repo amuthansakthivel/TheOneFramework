@@ -6,8 +6,10 @@ import com.tmb.pages.LoginPage;
 import com.tmb.testdata.EmployeeTestData;
 import com.tmb.testdata.LoginTestData;
 import com.tmb.tests.base.WebTestSetup;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("web")
 class AddEmployeeTest extends WebTestSetup {
 
   private final EmployeeDetails employeeDetails = EmployeeTestData.getRandomEmployeeDetails();
