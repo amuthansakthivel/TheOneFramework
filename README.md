@@ -5,11 +5,13 @@
 **To run web tests:**
 
 ```mvn clean test -Dgroups=web -Dselenide.browser=chrome```
+
 ```mvn clean test -Dgroups=web -Dselenide.browser=firefox```
 
 **To run mobile tests:**
 
 android - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.SauceLabAndroidProvider```
+
 ios     - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.SauceLabIosAppProvider```
 
 **To generate allure report after execution**
