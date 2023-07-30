@@ -21,4 +21,7 @@ public interface FrameworkConfig extends Config {
   @Key("${environment}.url")
   String webURL();
 
+  @Key("${environment}.api.baseurl")
+  String apiBaseUrl();
+
 }
