@@ -1,4 +1,4 @@
-**Selenide + Junit5 + Allure**
+**Selenide + Rest Assured + Junit5 + Allure for Web, Mobile,and Api Automation**
 
 [Video Tutorials about how to create this framework](https://www.youtube.com/watch?v=5vrYMfsxkGY&list=PL9ok7C7Yn9A9YyRISFrxHdaxb5qqrxp_i)
 
@@ -13,6 +13,10 @@
 android - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.SauceLabAndroidProvider```
 
 ios     - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.SauceLabIosAppProvider```
+
+**To run api tests:**
+
+api     - ```mvn clean test -Dgroups=api```
 
 **To generate allure report after execution**
 
