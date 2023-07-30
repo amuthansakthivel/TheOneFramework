@@ -1,4 +1,4 @@
-package com.tmb.tests.api;
+package com.tmb.tests.base;
 
 import com.tmb.config.FrameworkConfig;
 import com.tmb.config.factory.ConfigFactory;
