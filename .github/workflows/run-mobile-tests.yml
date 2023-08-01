@@ -74,7 +74,7 @@ jobs:
 
         - name: run android tests
           uses: reactivecircus/android-emulator-runner@v2
-          if: ${{ inputs.mobile-os = 'android' }}
+          if: ${{ inputs.mobile-os == 'android' }}
           with:
             api-level: ${{ matrix.api-level }}
             force-avd-creation: false
