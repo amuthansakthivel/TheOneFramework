@@ -39,6 +39,4 @@ jobs:
 
       - name: execute-api-tests
         run: |
-          mvn clean test 
-          -Dgroups="${{ inputs.test-tags-to-include }} & api"
-          -Denvironment=${{ inputs.environment }}
+          mvn clean test -Dgroups="${{ inputs.test-tags-to-include }} & api" -Denvironment=${{ inputs.environment }}

@@ -46,8 +46,4 @@ jobs:
 
       - name: execute-web-tests
         run: |
-          mvn clean test 
-          -Dgroups="${{ inputs.test-tags-to-include }} & web"
-          -Dselenide.remote=http://localhost:4444/wd/hub
-          -Denvironment=${{ inputs.environment }}
-          -Dselenide.browser=chrome
+          mvn clean test -Dgroups="${{ inputs.test-tags-to-include }} & web"-Dselenide.remote=http://localhost:4444/wd/hub-Denvironment=${{ inputs.environment }} -Dselenide.browser=chrome
