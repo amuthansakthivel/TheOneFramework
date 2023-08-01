@@ -1,14 +1,15 @@
 package com.tmb.tags.suite;
 
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 import java.lang.annotation.*;
 
-//including all smoke tests by default in regression tag
 @Tag("regression")
+@Tag("smoke")
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-@SmokeTest
+@Test
 public @interface RegressionTest {
 }
