@@ -86,3 +86,17 @@ jobs:
           if: ${{ inputs.mobile-os == 'ios' }}
           run: |
             mvn clean test -Dselenide.browser=com.tmb.provider.SauceLabIosAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
+
+        - uses: vimtor/action-zip@v1
+          timeout-minutes: 30
+          if: always()
+          with:
+            files: ./target/allure-results/
+            dest: ./allure-results.zip
+
+        - uses: actions/upload-artifact@v3
+          timeout-minutes: 30
+          if: always()
+          with:
+            name: allure-results
+            path: ./allure-results.zip

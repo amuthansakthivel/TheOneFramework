@@ -47,3 +47,17 @@ jobs:
       - name: execute-web-tests
         run: |
           mvn clean test -Dgroups="${{ inputs.test-tags-to-include }} & web" -Dselenide.remote=http://localhost:4444/wd/hub -Denvironment=${{ inputs.environment }} -Dselenide.browser=chrome
+
+      - uses: vimtor/action-zip@v1
+        timeout-minutes: 30
+        if: always()
+        with:
+          files: ./target/allure-results/
+          dest: ./allure-results.zip
+
+      - uses: actions/upload-artifact@v3
+        timeout-minutes: 30
+        if: always()
+        with:
+          name: allure-results
+          path: ./allure-results.zip
