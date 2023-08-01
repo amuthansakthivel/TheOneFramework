@@ -1,4 +1,4 @@
-package com.tmb.tags;
+package com.tmb.tags.testtype;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
