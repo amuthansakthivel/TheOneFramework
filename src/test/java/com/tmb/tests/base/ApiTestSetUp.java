@@ -2,7 +2,6 @@ package com.tmb.tests.base;
 
 import com.tmb.config.FrameworkConfig;
 import com.tmb.config.factory.ConfigFactory;
-import com.tmb.tests.base.TestSetup;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 

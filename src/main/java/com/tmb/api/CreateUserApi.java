@@ -2,7 +2,6 @@ package com.tmb.api;
 
 
 import com.tmb.entity.UserDetails;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -16,6 +15,6 @@ public class CreateUserApi {
         return given()
                 .body(userDetails)
                 .contentType(ContentType.JSON)
-                .post("https://reqres.in/api/users");
+                .post("/api/users");
     }
 }
