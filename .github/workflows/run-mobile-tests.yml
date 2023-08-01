@@ -31,12 +31,12 @@ on:
 jobs:
   mobile-tests:
     runs-on: macos-latest
+    timeout-minutes: 45
     steps:
         - name: checkout
           uses: actions/checkout@v3
 
         - name: Set up JDK 11
-          timeout-minutes: 30
           uses: actions/setup-java@v3
           with:
             java-version: '11'
@@ -88,14 +88,12 @@ jobs:
             mvn clean test -Dselenide.browser=com.tmb.provider.SauceLabIosAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
 
         - uses: vimtor/action-zip@v1
-          timeout-minutes: 30
           if: always()
           with:
             files: ./target/allure-results/
             dest: ./allure-results.zip
 
         - uses: actions/upload-artifact@v3
-          timeout-minutes: 30
           if: always()
           with:
             name: allure-results
