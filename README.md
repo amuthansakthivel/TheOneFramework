@@ -20,6 +20,8 @@ api     - ```mvn clean test -Dgroups=api```
 
 **To generate allure report after execution**
 
+```brew install allure```
+
 ```allure serve ./target/allure-results```
 
 **Download apps from here**
