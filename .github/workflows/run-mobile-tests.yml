@@ -83,5 +83,6 @@ jobs:
             script: mvn clean test -Dselenide.browser=com.tmb.provider.SauceLabAndroidProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
 
         - name: run ios tests
+          if: ${{ inputs.mobile-os == 'ios' }}
           run: |
             mvn clean test -Dselenide.browser=com.tmb.provider.SauceLabIosAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
