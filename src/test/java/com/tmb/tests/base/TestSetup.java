@@ -10,7 +10,10 @@ public class TestSetup {
 
   @BeforeAll
   static void setupAllureReports() {
+    //Logs element interaction steps to the allure report
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
+    //Logs request and response details for API calls to the allure report
     RestAssured.filters(new AllureRestAssured());
   }
 }
