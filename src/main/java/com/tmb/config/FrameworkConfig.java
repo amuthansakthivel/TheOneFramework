@@ -11,6 +11,7 @@ import static org.aeonbits.owner.Config.Sources;
     "system:properties",
     "system:env",
     "file:${user.dir}/src/test/resources/config.properties",
+    "file:${user.dir}/src/test/resources/dev-config.properties",
     "file:${user.dir}/src/test/resources/staging-config.properties",
 })
 public interface FrameworkConfig extends Config {
@@ -23,5 +24,14 @@ public interface FrameworkConfig extends Config {
 
   @Key("${environment}.api.baseurl")
   String apiBaseUrl();
+
+  String lambdaTestAppUrl();
+
+  String lambdaTestUserName();
+
+  String lambdaTestAccessKey();
+
+  @Key("https://${lambdaTestUserName}:${lambdaTestAccessKey}@mobile-hub.lambdatest.com/wd/hub")
+  String lambdaTestRemoteUrl();
 
 }
