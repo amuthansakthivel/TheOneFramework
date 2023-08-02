@@ -30,8 +30,4 @@ public interface FrameworkConfig extends Config {
   String lambdaTestUserName();
 
   String lambdaTestAccessKey();
-
-  @Key("https://${lambdaTestUserName}:${lambdaTestAccessKey}@mobile-hub.lambdatest.com/wd/hub")
-  String lambdaTestRemoteUrl();
-
 }

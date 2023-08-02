@@ -17,7 +17,8 @@ public class LambdaTestAndroidAppProvider implements WebDriverProvider {
 
     private static final FrameworkConfig CONFIG = ConfigFactory.config();
     private static final String LAMBDA_TEST_APP_URL = CONFIG.lambdaTestAppUrl();
-    private static final String LAMBDA_TEST_REMOTE_URL = CONFIG.lambdaTestRemoteUrl();
+    private static final String LAMBDA_TEST_USER_NAME = CONFIG.lambdaTestUserName();
+    private static final String LAMBDA_TEST_ACCESS_KEY = CONFIG.lambdaTestAccessKey();
 
     @Nonnull
     @Override
@@ -38,9 +39,9 @@ public class LambdaTestAndroidAppProvider implements WebDriverProvider {
         ltOptions.put("isRealMobile", true);
         ltOptions.put("appiumVersion", "2.0");
         options.setCapability("lt:options", ltOptions);
-
+        String lambdaTestRemoteUrl = String.format("https://%s:%s@mobile-hub.lambdatest.com/wd/hub", LAMBDA_TEST_USER_NAME, LAMBDA_TEST_ACCESS_KEY);
         try {
-            return new AndroidDriver(new URL(LAMBDA_TEST_REMOTE_URL), options);
+            return new AndroidDriver(new URL(lambdaTestRemoteUrl), options);
         } catch (MalformedURLException e) {
             throw new IllegalArgumentException(e);
         }
