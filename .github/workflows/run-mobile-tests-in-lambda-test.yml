@@ -36,8 +36,8 @@ jobs:
           cache: maven
 
       - name: run android tests
-        run: |
-          mvn clean test -Dselenide.browser=com.tmb.provider.mobile.remote.LambdaTestAndroidAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }} -DlambdaTestUserName=${{ secrets.LAMBDA_TEST_USER_NAME }} -DlambdaTestAccessKey=${{ LAMBDA_TEST_ACCESS_KEY }} -DlambdaTestAppUrl=${{ secrets.LAMBDA_TEST_APP_URL }}
+        run: | 
+          mvn clean test -Dselenide.browser=com.tmb.provider.mobile.remote.LambdaTestAndroidAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }} -DlambdaTestUserName=${{ secrets.LAMBDA_TEST_USER_NAME }} -DlambdaTestAccessKey=${{ secrets.LAMBDA_TEST_ACCESS_KEY }} -DlambdaTestAppUrl=${{ secrets.LAMBDA_TEST_APP_URL }}
 
       - uses: vimtor/action-zip@v1
         if: always()
