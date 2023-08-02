@@ -10,9 +10,9 @@
 
 **To run mobile tests:**
 
-android - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.SauceLabAndroidProvider```
+android - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.mobile.local.AndroidAppProvider```
 
-ios     - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.SauceLabIosAppProvider```
+ios     - ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.mobile.local.IosAppProvider```
 
 **To run api tests:**
 

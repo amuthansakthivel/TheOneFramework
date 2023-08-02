@@ -1,4 +1,4 @@
-package com.tmb.provider;
+package com.tmb.provider.mobile.local;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.ios.IOSDriver;
@@ -11,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class SauceLabIosAppProvider implements WebDriverProvider {
+public class IosAppProvider implements WebDriverProvider {
   @Nonnull
   @Override
   public WebDriver createDriver(@Nonnull Capabilities capabilities) {

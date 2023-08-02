@@ -80,12 +80,12 @@ jobs:
             force-avd-creation: false
             emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
             disable-animations: true
-            script: mvn clean test -Dselenide.browser=com.tmb.provider.SauceLabAndroidProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
+            script: mvn clean test -Dselenide.browser=com.tmb.provider.mobile.local.AndroidProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
 
         - name: run ios tests
           if: ${{ inputs.mobile-os == 'ios' }}
           run: |
-            mvn clean test -Dselenide.browser=com.tmb.provider.SauceLabIosAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
+            mvn clean test -Dselenide.browser=com.tmb.provider.mobile.local.IosAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
 
         - uses: vimtor/action-zip@v1
           if: always()

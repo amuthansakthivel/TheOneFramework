@@ -1,4 +1,4 @@
-package com.tmb.provider;
+package com.tmb.provider.mobile.local;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class SauceLabAndroidProvider implements WebDriverProvider {
+public class AndroidAppProvider implements WebDriverProvider {
   @Nonnull
   @Override
   public WebDriver createDriver(@Nonnull Capabilities capabilities) {
@@ -24,7 +24,7 @@ public class SauceLabAndroidProvider implements WebDriverProvider {
     try {
       return new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
     } catch (MalformedURLException e) {
-      throw new RuntimeException(e);
+      throw new IllegalArgumentException(e);
     }
   }
 }
