@@ -1,3 +1,5 @@
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=amuthansakthivel_theoneframework)
+
 **Selenide + Rest Assured + Junit5 + Allure for Web, Mobile,and Api Automation**
 
 One single framework to automate web, mobile and api.
@@ -46,9 +48,3 @@ API     - ```mvn clean test -Dgroups=api```
 Install Allure in the machine - ```brew install allure```
 
 Open allure reports - ```allure serve ./target/allure-results```
-
-**Download mobile apps from here**
-
-https://github.com/saucelabs/my-demo-app-rn/releases
-
-https://github.com/appium/android-apidemos/releases
