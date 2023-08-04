@@ -13,7 +13,6 @@ class AddToCartTest extends MobileTestSetup {
     @MobileTest
     void addAProductToCart() {
         ProductDetailsScreen productDetailsScreen = screen(ProductDetailsScreen.class);
-
         productDetailsScreen
                 .selectProduct()
                 .checkWhetherAddToCartButtonIsPresent();

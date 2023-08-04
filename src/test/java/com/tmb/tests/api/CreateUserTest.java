@@ -24,8 +24,8 @@ class CreateUserTest extends ApiTestSetUp {
                 .statusCodeIs(201)
                 .canBeDeserializedTo(CreateUserResponse.class)
                 .hasKeyWithValue("job", userDetails.getJob())
-                .andMatchingRule(e-> e.jsonPath().getString("name").equalsIgnoreCase(userDetails.getName()))
+                .matchingRule(e-> e.jsonPath().getString("name").equalsIgnoreCase(userDetails.getName()))
                 .matchesSchemaInFile("create-user-response-schema.json")
-                .assertAll(); //dont forget call assertAll
+                .assertAll(); //don't forget to call assertAll
     }
 }

@@ -37,13 +37,13 @@ public class ResponseAssert extends AbstractAssert<ResponseAssert, Response> {
         return this;
     }
 
-    public ResponseAssert andMatchingRule(Predicate<Response> condition, String errorMessage) {
+    public ResponseAssert matchingRule(Predicate<Response> condition, String errorMessage) {
         softAssertions.assertThat(condition).withFailMessage(errorMessage).accepts(actual);
         return this;
     }
 
-    public ResponseAssert andMatchingRule(Predicate<Response> condition) {
-        return andMatchingRule(condition, "Predicate validation failed");
+    public ResponseAssert matchingRule(Predicate<Response> condition) {
+        return matchingRule(condition, "Predicate validation failed");
     }
 
     public <T> ResponseAssert canBeDeserializedTo(Class<T> clazz) {
