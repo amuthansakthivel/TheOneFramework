@@ -1,14 +1,15 @@
 package com.tmb.tests.api;
 
 import com.tmb.api.CreateUserApi;
-import com.tmb.entity.UserDetails;
+import com.tmb.entity.response.CreateUserResponse;
+import com.tmb.entity.requests.UserDetails;
 import com.tmb.tags.testtype.ApiTest;
 import com.tmb.tags.suite.RegressionTest;
 import com.tmb.testdata.UserTestData;
 import com.tmb.tests.base.ApiTestSetUp;
 import io.restassured.response.Response;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.tmb.asserthelpers.ResponseAssert.*;
 
 @RegressionTest
 class CreateUserTest extends ApiTestSetUp {
@@ -18,7 +19,13 @@ class CreateUserTest extends ApiTestSetUp {
     @ApiTest
     void createUser() {
         Response response = CreateUserApi.createUser(userDetails);
-        assertThat(response.statusCode())
-                .isEqualTo(201);
+
+        assertThat(response)
+                .statusCodeIs(201)
+                .canBeDeserializedTo(CreateUserResponse.class)
+                .hasKeyWithValue("job", userDetails.getJob())
+                .andMatchingRule(e-> e.jsonPath().getString("name").equalsIgnoreCase(userDetails.getName()))
+                .matchesSchemaInFile("create-user-response-schema.json")
+                .assertAll(); //dont forget call assertAll
     }
 }

@@ -1,4 +1,4 @@
-package com.tmb.entity;
+package com.tmb.entity.requests;
 
 import com.tmb.entity.strategy.FirstNameStrategy;
 import com.tmb.entity.strategy.JobStrategy;

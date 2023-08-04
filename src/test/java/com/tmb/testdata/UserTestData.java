@@ -1,6 +1,6 @@
 package com.tmb.testdata;
 
-import com.tmb.entity.UserDetails;
+import com.tmb.entity.requests.UserDetails;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
