@@ -1,7 +1,7 @@
 package com.tmb.api;
 
 
-import com.tmb.entity.UserDetails;
+import com.tmb.entity.requests.UserDetails;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
