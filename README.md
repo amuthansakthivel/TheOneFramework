@@ -25,6 +25,64 @@ One single framework to automate web, mobile and api.
 
 [Rest-Assured](https://www.youtube.com/watch?v=aMkFmtqRUbE&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU)
 
+**Sample Web Test**
+
+```java
+@SmokeTest
+class AddEmployeeTest extends WebTestSetup {
+
+  private final EmployeeDetails employeeDetails = EmployeeTestData.getRandomEmployeeDetails();
+  private final LoginDetails loginDetails = LoginTestData.getValidLoginDetails();
+
+  @WebTest
+  void testAddEmployee() {
+    LoginPage.getInstance()
+        .loginToApplication(loginDetails)
+        .navigateToEmployeeInformationPage()
+        .addNewEmployee(employeeDetails)
+        .checkWhetherEmployeeCreatedSuccessfully();
+  }
+}
+```
+**Sample Mobile Test**
+
+```java
+@RegressionTest
+class AddToCartTest extends MobileTestSetup {
+
+    @MobileTest
+    void addAProductToCart() {
+        ProductDetailsScreen productDetailsScreen = screen(ProductDetailsScreen.class);
+        productDetailsScreen
+                .selectProduct()
+                .checkWhetherAddToCartButtonIsPresent();
+    }
+}
+```
+
+**Sample Api Test**
+
+```java
+@RegressionTest
+class CreateUserTest extends ApiTestSetUp {
+
+    private final UserDetails userDetails = UserTestData.getUserDetails();
+
+    @ApiTest
+    void createUser() {
+        Response response = CreateUserApi.createUser(userDetails);
+
+        assertThat(response)
+                .statusCodeIs(201)
+                .canBeDeserializedTo(CreateUserResponse.class)
+                .hasKeyWithValue("job", userDetails.getJob())
+                .andMatchingRule(e-> e.jsonPath().getString("name").equalsIgnoreCase(userDetails.getName()))
+                .matchesSchemaInFile("create-user-response-schema.json")
+                .assertAll(); //don't forget to call assertAll
+    }
+}
+```
+
 **To run web tests:**
 
 ```mvn clean test -Dgroups=web -Dselenide.browser=chrome```
