@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  sonarcloud:
+  checkstyle:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
