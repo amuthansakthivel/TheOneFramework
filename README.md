@@ -25,6 +25,8 @@ One single framework to automate web, mobile and api.
 
 [Rest-Assured](https://www.youtube.com/watch?v=aMkFmtqRUbE&list=PL9ok7C7Yn9A-JaUtcMwevO_FfbFNRYLfU)
 
+[SDET Essentials playlist](https://www.youtube.com/watch?v=VpsnP9-jMNc&list=PL9ok7C7Yn9A_JtAB1-ZmrO7ugRq0rP83q)
+
 **Sample Web Test**
 
 ```java
