@@ -15,35 +15,36 @@ import java.util.HashMap;
 
 public class LambdaTestAndroidAppProvider implements WebDriverProvider {
 
-    private static final FrameworkConfig CONFIG = ConfigFactory.config();
-    private static final String LAMBDA_TEST_APP_URL = CONFIG.lambdaTestAppUrl();
-    private static final String LAMBDA_TEST_USER_NAME = CONFIG.lambdaTestUserName();
-    private static final String LAMBDA_TEST_ACCESS_KEY = CONFIG.lambdaTestAccessKey();
+  private static final FrameworkConfig CONFIG = ConfigFactory.config();
+  private static final String LAMBDA_TEST_APP_URL = CONFIG.lambdaTestAppUrl();
+  private static final String LAMBDA_TEST_USER_NAME = CONFIG.lambdaTestUserName();
+  private static final String LAMBDA_TEST_ACCESS_KEY = CONFIG.lambdaTestAccessKey();
 
-    @Nonnull
-    @Override
-    public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-        UiAutomator2Options options = new UiAutomator2Options();
-        HashMap<String, Object> ltOptions = new HashMap<>();
-        ltOptions.put("w3c", true);
-        ltOptions.put("platformName", "android");
-        ltOptions.put("deviceName", "Pixel 4");
-        ltOptions.put("platformVersion", "10");
-        ltOptions.put("app", LAMBDA_TEST_APP_URL);
-        ltOptions.put("video", true);
-        ltOptions.put("build", "test-build");
-        ltOptions.put("name", "test-demo");
-        ltOptions.put("project", "demo-project");
-        ltOptions.put("autoGrantPermissions", true);
-        ltOptions.put("autoAcceptAlerts", true);
-        ltOptions.put("isRealMobile", true);
-        ltOptions.put("appiumVersion", "2.0");
-        options.setCapability("lt:options", ltOptions);
-        String lambdaTestRemoteUrl = String.format("https://%s:%s@mobile-hub.lambdatest.com/wd/hub", LAMBDA_TEST_USER_NAME, LAMBDA_TEST_ACCESS_KEY);
-        try {
-            return new AndroidDriver(new URL(lambdaTestRemoteUrl), options);
-        } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(e);
-        }
+  @Nonnull
+  @Override
+  public WebDriver createDriver(@Nonnull Capabilities capabilities) {
+    UiAutomator2Options options = new UiAutomator2Options();
+    HashMap<String, Object> ltOptions = new HashMap<>();
+    ltOptions.put("w3c", true);
+    ltOptions.put("platformName", "android");
+    ltOptions.put("deviceName", "Pixel 4");
+    ltOptions.put("platformVersion", "10");
+    ltOptions.put("app", LAMBDA_TEST_APP_URL);
+    ltOptions.put("video", true);
+    ltOptions.put("build", "test-build");
+    ltOptions.put("name", "test-demo");
+    ltOptions.put("project", "demo-project");
+    ltOptions.put("autoGrantPermissions", true);
+    ltOptions.put("autoAcceptAlerts", true);
+    ltOptions.put("isRealMobile", true);
+    ltOptions.put("appiumVersion", "2.0");
+    options.setCapability("lt:options", ltOptions);
+    String lambdaTestRemoteUrl =
+      String.format("https://%s:%s@mobile-hub.lambdatest.com/wd/hub", LAMBDA_TEST_USER_NAME, LAMBDA_TEST_ACCESS_KEY);
+    try {
+      return new AndroidDriver(new URL(lambdaTestRemoteUrl), options);
+    } catch (MalformedURLException e) {
+      throw new IllegalArgumentException(e);
     }
+  }
 }

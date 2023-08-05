@@ -8,13 +8,13 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
 public class CreateUserApi {
-    private CreateUserApi() {
-    }
+  private CreateUserApi() {
+  }
 
-    public static Response createUser(UserDetails userDetails) {
-        return given()
-                .body(userDetails)
-                .contentType(ContentType.JSON)
-                .post("/api/users");
-    }
+  public static Response createUser(UserDetails userDetails) {
+    return given()
+      .body(userDetails)
+      .contentType(ContentType.JSON)
+      .post("/api/users");
+  }
 }

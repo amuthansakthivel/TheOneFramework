@@ -10,11 +10,11 @@ import static com.codeborne.selenide.appium.ScreenObject.screen;
 @RegressionTest
 class AddToCartTest extends MobileTestSetup {
 
-    @MobileTest
-    void addAProductToCart() {
-        ProductDetailsScreen productDetailsScreen = screen(ProductDetailsScreen.class);
-        productDetailsScreen
-                .selectProduct()
-                .checkWhetherAddToCartButtonIsPresent();
-    }
+  @MobileTest
+  void addAProductToCart() {
+    ProductDetailsScreen productDetailsScreen = screen(ProductDetailsScreen.class);
+    productDetailsScreen
+      .selectProduct()
+      .checkWhetherAddToCartButtonIsPresent();
+  }
 }

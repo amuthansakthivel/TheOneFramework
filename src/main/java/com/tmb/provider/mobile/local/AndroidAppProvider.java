@@ -17,7 +17,7 @@ public class AndroidAppProvider implements WebDriverProvider {
   public WebDriver createDriver(@Nonnull Capabilities capabilities) {
     UiAutomator2Options options = new UiAutomator2Options();
     options.setPlatformName("Android"); //optional
-    options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);//optional
+    options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2); //optional
     options.setDeviceName("amuthan-test-device");
     options.setApp(System.getProperty("user.dir") + "/apps/Android-MyDemoAppRN.1.3.0.build-244.apk");
 

@@ -14,18 +14,18 @@ import static com.tmb.asserthelpers.ResponseAssert.*;
 @RegressionTest
 class CreateUserTest extends ApiTestSetUp {
 
-    private final UserDetails userDetails = UserTestData.getUserDetails();
+  private final UserDetails userDetails = UserTestData.getUserDetails();
 
-    @ApiTest
-    void createUser() {
-        Response response = CreateUserApi.createUser(userDetails);
+  @ApiTest
+  void createUser() {
+    Response response = CreateUserApi.createUser(userDetails);
 
-        assertThat(response)
-                .statusCodeIs(201)
-                .canBeDeserializedTo(CreateUserResponse.class)
-                .hasKeyWithValue("job", userDetails.getJob())
-                .matchingRule(e-> e.jsonPath().getString("name").equalsIgnoreCase(userDetails.getName()))
-                .matchesSchemaInFile("create-user-response-schema.json")
-                .assertAll(); //don't forget to call assertAll
-    }
+    assertThat(response)
+      .statusCodeIs(201)
+      .canBeDeserializedTo(CreateUserResponse.class)
+      .hasKeyWithValue("job", userDetails.getJob())
+      .matchingRule(e -> e.jsonPath().getString("name").equalsIgnoreCase(userDetails.getName()))
+      .matchesSchemaInFile("create-user-response-schema.json")
+      .assertAll(); //don't forget to call assertAll
+  }
 }

@@ -24,7 +24,7 @@ public class EmployeeInformationPage {
   private static final SelenideElement IMAGE = $(byXpath("//input[@type='file']"));
   private static final ElementsCollection SUCCESS_MESSAGE = $$(byText("Success"));
 
-  public EmployeeInformationPage addNewEmployee(EmployeeDetails employee){
+  public EmployeeInformationPage addNewEmployee(EmployeeDetails employee) {
     ADD_EMPLOYEE_BUTTON.shouldBe(visible).click();
     FIRST_NAME.shouldBe(visible).setValue(employee.getFirstName());
     LAST_NAME.shouldBe(visible).setValue(employee.getLastName());
@@ -34,7 +34,7 @@ public class EmployeeInformationPage {
     return this;
   }
 
-  public void checkWhetherEmployeeCreatedSuccessfully(){
+  public void checkWhetherEmployeeCreatedSuccessfully() {
     SUCCESS_MESSAGE.first().shouldHave(visible, text("Success"));
   }
 }

@@ -7,9 +7,9 @@ import uk.co.jemos.podam.common.PodamStrategyValue;
 
 @Data
 public class UserDetails {
-    @PodamStrategyValue(FirstNameStrategy.class)
-    private String name;
+  @PodamStrategyValue(FirstNameStrategy.class)
+  private String name;
 
-    @PodamStrategyValue(JobStrategy.class)
-    private String job;
+  @PodamStrategyValue(JobStrategy.class)
+  private String job;
 }

@@ -17,7 +17,7 @@ public class ProductDescriptionScreen {
 
   //CombinedBy is an alternative to PageFactory. When you want to have dynamic element, CombinedBy can be really helpful
   private static final CombinedBy ADD_TO_CART_BUTTON = CombinedBy.android(AppiumBy.accessibilityId("Add To Cart button"))
-          .ios(AppiumBy.iOSNsPredicateString("label == 'Add To Cart'"));
+    .ios(AppiumBy.iOSNsPredicateString("label == 'Add To Cart'"));
 
   public void checkWhetherAddToCartButtonIsPresent() {
     $(ADD_TO_CART_BUTTON).shouldHave(visible);

@@ -8,10 +8,10 @@ import java.util.stream.Stream;
 
 public class JobStrategy implements AttributeStrategy<String> {
 
-    @Override
-    public String getValue(Class<?> aClass, List<Annotation> list) {
-        return Stream.of("developer","tester","devops","SRE")
-                .findAny()
-                .orElseThrow();
-    }
+  @Override
+  public String getValue(Class<?> aClass, List<Annotation> list) {
+    return Stream.of("developer", "tester", "devops", "SRE")
+      .findAny()
+      .orElseThrow();
+  }
 }
