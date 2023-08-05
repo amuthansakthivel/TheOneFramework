@@ -9,7 +9,9 @@
     <suppress checks="JavadocStyleCheck"
               files="GeneratedObject.java"
               lines="50-9999"/>
+    <suppress checks="NewlineAtEndOfFile" files="src[/\\]main[/\\]resources[/\\].*"/>
     <suppress checks="NewlineAtEndOfFile" files="src[/\\]test[/\\]resources[/\\].*"/>
     <suppress checks="LineLength" files="src[/\\]test[/\\]resources[/\\].*"/>
     <suppress checks="LineLength" files="src[/\\]main[/\\]resources[/\\].*"/>
+
 </suppressions>

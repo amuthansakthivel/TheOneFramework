@@ -18,9 +18,9 @@ class AddEmployeeTest extends WebTestSetup {
   @WebTest
   void testAddEmployee() {
     LoginPage.getInstance()
-        .loginToApplication(loginDetails)
-        .navigateToEmployeeInformationPage()
-        .addNewEmployee(employeeDetails)
-        .checkWhetherEmployeeCreatedSuccessfully();
+      .loginToApplication(loginDetails)
+      .navigateToEmployeeInformationPage()
+      .addNewEmployee(employeeDetails)
+      .checkWhetherEmployeeCreatedSuccessfully();
   }
 }

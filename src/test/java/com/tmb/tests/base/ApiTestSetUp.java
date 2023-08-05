@@ -7,10 +7,10 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class ApiTestSetUp extends TestSetup {
 
-    private static final FrameworkConfig CONFIG = ConfigFactory.config();
+  private static final FrameworkConfig CONFIG = ConfigFactory.config();
 
-    @BeforeEach
-    void apiSetUp() {
-        RestAssured.baseURI = CONFIG.apiBaseUrl();
-    }
+  @BeforeEach
+  void apiSetUp() {
+    RestAssured.baseURI = CONFIG.apiBaseUrl();
+  }
 }

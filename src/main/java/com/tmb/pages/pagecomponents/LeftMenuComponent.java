@@ -13,7 +13,7 @@ public class LeftMenuComponent {
 
   public LeftMenuComponent selectAMenuFromLeftMenuBar(LeftMenuComponentType menuType) {
     $(byText(menuType.getMenuName())).shouldBe(enabled)
-        .click();
+      .click();
     return this;
   }
 
@@ -24,7 +24,7 @@ public class LeftMenuComponent {
   @SneakyThrows
   public <T> T getInstanceOfClass(Class<T> clazz) {
     return clazz.getDeclaredConstructor()
-        .newInstance();
+      .newInstance();
   }
 
   /*

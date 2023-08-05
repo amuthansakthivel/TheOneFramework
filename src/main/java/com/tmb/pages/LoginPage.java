@@ -24,11 +24,11 @@ public class LoginPage {
 
   public HomePage loginToApplication(LoginDetails loginDetails) {
     USERNAME.shouldBe(visible)
-        .setValue(loginDetails.getUserName());
+      .setValue(loginDetails.getUserName());
     PASSWORD.shouldBe(visible)
-        .setValue(loginDetails.getPassword());
+      .setValue(loginDetails.getPassword());
     LOGIN_BUTTON.shouldBe(enabled)
-        .click();
+      .click();
     return new HomePage();
   }
 }

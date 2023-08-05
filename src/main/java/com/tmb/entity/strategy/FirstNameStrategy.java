@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class FirstNameStrategy implements AttributeStrategy<String> {
-    @Override
-    public String getValue(Class<?> aClass, List<Annotation> list) {
-        Faker faker = new Faker();
-        return IntStream.rangeClosed(1, 100)
-                .mapToObj(i-> faker.name().firstName())
-                .findAny()
-                .orElseThrow();
-    }
+  @Override
+  public String getValue(Class<?> aClass, List<Annotation> list) {
+    Faker faker = new Faker();
+    return IntStream.rangeClosed(1, 100)
+      .mapToObj(i -> faker.name().firstName())
+      .findAny()
+      .orElseThrow();
+  }
 }
