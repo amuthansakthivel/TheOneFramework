@@ -99,10 +99,10 @@ Local-Ios | ```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provide
 
 Lambda-Test-Android
 - To run your native android app test utilizing a real device on LambdaTest cloud, upload the sample android apk from [here](https://github.com/amuthansakthivel/TheOneFramework/tree/main/apps) using the LambdaTest app upload [api](https://www.lambdatest.com/support/docs/upload-your-mobile-app/). This will give you `app_url` in response which we need to set for lambdaTestAppUrl in [config.properties](https://github.com/amuthansakthivel/TheOneFramework/blob/main/src/test/resources/config.properties)
-- Add your Lambdatest username and accessKey in [config.properties](https://github.com/amuthansakthivel/TheOneFramework/blob/main/src/test/resources/config.properties)
+- Add your Lambdatest username and accessKey in [config.properties](https://github.com/amuthansakthivel/TheOneFramework/blob/main/src/test/resources/config.properties) or pass it as system property
 - Run below command:
 
-```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.mobile.remote.LambdaTestAndroidAppProvider```
+```mvn clean test -Dgroups=mobile -Dselenide.browser=com.tmb.provider.mobile.remote.LambdaTestAndroidAppProvider -DlambdaTestAppUrl=lt://APPURL12345```
 
 **To run api tests:**
 
