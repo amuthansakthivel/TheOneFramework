@@ -26,7 +26,7 @@ jobs:
     timeout-minutes: 15
     services:
       selenium-chrome:
-        image: selenium/standalone-chrome:110.0
+        image: selenium/standalone-chrome:115.0
         options: >-
           --shm-size "2g"
         ports:
