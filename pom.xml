@@ -19,7 +19,7 @@
         <podam.version>7.2.11.RELEASE</podam.version>
         <owner.version>1.0.12</owner.version>
         <restassured.version>5.3.1</restassured.version>
-        <restassured.allure.version>2.21.0</restassured.allure.version>
+        <restassured.allure.version>2.24.0</restassured.allure.version>
         <assertj.version>3.24.2</assertj.version>
         <faker.version>1.0.2</faker.version>
     </properties>
