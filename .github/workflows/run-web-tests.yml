@@ -54,7 +54,7 @@ jobs:
       - name: execute-web-tests-pull-request
         if: ${{ github.event_name == 'pull_request' }}
         run: |
-          mvn clean test -Dgroups=web -Dselenide.remote=http://localhost:4444/wd/hub -Denvironment=${{ inputs.environment }} -Dselenide.browser=chrome
+          mvn clean test -Dgroups=web -Dselenide.remote=http://localhost:4444/wd/hub -Denvironment=staging -Dselenide.browser=chrome
 
       - uses: vimtor/action-zip@v1
         timeout-minutes: 30
