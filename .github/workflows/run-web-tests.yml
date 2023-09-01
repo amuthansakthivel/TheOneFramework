@@ -1,8 +1,6 @@
 name: run web automated tests
 
 on:
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
     inputs:
       test-tags-to-include:
