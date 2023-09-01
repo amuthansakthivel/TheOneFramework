@@ -1,6 +1,8 @@
 name: run api automated tests
 
 on:
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       test-tags-to-include:
@@ -37,9 +39,15 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: execute-api-tests
+      - name: execute-api-tests-workflow-dispatch
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           mvn clean test -Dgroups="${{ inputs.test-tags-to-include }} & api" -Denvironment=${{ inputs.environment }}
+
+      - name: execute-api-tests-pull-request
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          mvn clean test -Dgroups=api -Denvironment=staging
 
       - uses: vimtor/action-zip@v1
         timeout-minutes: 30
