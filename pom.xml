@@ -16,7 +16,7 @@
         <selenide.version>6.17.2</selenide.version>
         <junit.version>5.8.2</junit.version>
         <lombok.version>1.18.28</lombok.version>
-        <podam.version>7.2.11.RELEASE</podam.version>
+        <podam.version>8.0.0.RELEASE</podam.version>
         <owner.version>1.0.12</owner.version>
         <restassured.version>5.3.1</restassured.version>
         <restassured.allure.version>2.21.0</restassured.allure.version>
