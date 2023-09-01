@@ -43,7 +43,7 @@ jobs:
             distribution: 'temurin'
             cache: maven
 
-        - uses: actions/setup-node@v2
+        - uses: actions/setup-node@v3
           with:
             node-version: '18'
         - run: |
@@ -54,7 +54,7 @@ jobs:
             appium &>/dev/null &
 
         - name: AVD cache
-          uses: actions/cache@v2
+          uses: actions/cache@v3
           id: avd-cache
           with:
             path: |
