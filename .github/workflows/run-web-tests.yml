@@ -46,9 +46,15 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: execute-web-tests
+      - name: execute-web-tests-workflow-dispatch
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           mvn clean test -Dgroups="${{ inputs.test-tags-to-include }} & web" -Dselenide.remote=http://localhost:4444/wd/hub -Denvironment=${{ inputs.environment }} -Dselenide.browser=chrome
+
+      - name: execute-web-tests-pull-request
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          mvn clean test -Dgroups=web -Dselenide.remote=http://localhost:4444/wd/hub -Denvironment=${{ inputs.environment }} -Dselenide.browser=chrome
 
       - uses: vimtor/action-zip@v1
         timeout-minutes: 30
