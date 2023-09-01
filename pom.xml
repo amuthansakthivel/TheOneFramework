@@ -13,7 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <allure.version>2.22.0</allure.version>
         <aspectj.version>1.9.20</aspectj.version>
-        <selenide.version>6.17.0</selenide.version>
+        <selenide.version>6.17.2</selenide.version>
         <junit.version>5.8.2</junit.version>
         <lombok.version>1.18.22</lombok.version>
         <podam.version>7.2.11.RELEASE</podam.version>
