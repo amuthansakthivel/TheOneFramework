@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.tmb.config.FrameworkConfig;
 import com.tmb.config.factory.ConfigFactory;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Selenide.open;
 

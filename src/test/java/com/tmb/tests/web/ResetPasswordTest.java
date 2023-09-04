@@ -6,11 +6,11 @@ import com.tmb.tests.base.WebTestSetup;
 
 class ResetPasswordTest extends WebTestSetup {
 
-    @WebTest
-    void resetPassword() {
-        LoginPage.getInstance()
-                .navigateToResetPasswordPage()
-                .resetPassword()
-                .checkWhetherPasswordResetMessageIsDisplayed();
-    }
+  @WebTest
+  void resetPassword() {
+    LoginPage.getInstance()
+            .navigateToResetPasswordPage()
+            .resetPassword()
+            .checkWhetherPasswordResetMessageIsDisplayed();
+  }
 }

@@ -8,6 +8,7 @@ import com.tmb.tags.testtype.WebTest;
 import com.tmb.testdata.EmployeeTestData;
 import com.tmb.testdata.LoginTestData;
 import com.tmb.tests.base.WebTestSetup;
+import org.openqa.selenium.WebDriver;
 
 @SmokeTest
 class AddEmployeeTest extends WebTestSetup {
