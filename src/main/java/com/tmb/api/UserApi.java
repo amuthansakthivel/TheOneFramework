@@ -8,19 +8,19 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
 public class UserApi {
-    private UserApi() {
-    }
+  private UserApi() {
+  }
 
-    public static Response createUser(UserDetails userDetails) {
-        return given()
-                .body(userDetails)
-                .contentType(ContentType.JSON)
-                .post("/api/users");
-    }
+  public static Response createUser(UserDetails userDetails) {
+    return given()
+            .body(userDetails)
+            .contentType(ContentType.JSON)
+            .post("/api/users");
+  }
 
-    public static Response getUser(int userId) {
+  public static Response getUser(int userId) {
     return given()
             .pathParam("userId", userId)
             .get("/api/users/{userId}");
-    }
+  }
 }
