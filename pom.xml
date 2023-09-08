@@ -12,13 +12,13 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <allure.version>2.24.0</allure.version>
-        <aspectj.version>1.9.20</aspectj.version>
-        <selenide.version>6.17.2</selenide.version>
-        <junit.version>5.9.2</junit.version>
+        <aspectj.version>1.9.20.1</aspectj.version>
+        <selenide.version>6.18.0</selenide.version>
+        <junit.version>5.10.0</junit.version>
         <lombok.version>1.18.28</lombok.version>
         <podam.version>8.0.0.RELEASE</podam.version>
         <owner.version>1.0.12</owner.version>
-        <restassured.version>5.3.1</restassured.version>
+        <restassured.version>5.3.2</restassured.version>
         <restassured.allure.version>2.24.0</restassured.allure.version>
         <assertj.version>3.24.2</assertj.version>
         <faker.version>1.0.2</faker.version>
