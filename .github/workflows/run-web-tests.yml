@@ -26,7 +26,7 @@ jobs:
     timeout-minutes: 15
     services:
       selenium-chrome:
-        image: selenium/standalone-chrome:115.0
+        image: selenium/standalone-chrome:116.0
         options: >-
           --shm-size "2g"
         ports:
@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up JDK 11
         timeout-minutes: 30
