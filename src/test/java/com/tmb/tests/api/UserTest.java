@@ -16,7 +16,6 @@ class UserTest extends ApiTestSetUp {
 
   private final UserDetails userDetails = UserTestData.getUserDetails();
 
-  //SDET essentials - Testing mini bytes
   @ApiTest
   void createUser() {
 
@@ -42,6 +41,4 @@ class UserTest extends ApiTestSetUp {
                     response1.jsonPath().getString("data.email").equalsIgnoreCase("janet.weaver@reqres.in"))
             .assertAll();
   }
-
-
 }

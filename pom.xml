@@ -14,7 +14,7 @@
         <allure.version>2.24.0</allure.version>
         <aspectj.version>1.9.20.1</aspectj.version>
         <selenide.version>6.18.0</selenide.version>
-        <junit.version>5.10.0</junit.version>
+        <junit.version>5.9.2</junit.version>
         <lombok.version>1.18.28</lombok.version>
         <podam.version>8.0.0.RELEASE</podam.version>
         <owner.version>1.0.12</owner.version>
