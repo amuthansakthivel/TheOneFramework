@@ -13,7 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <allure.version>2.24.0</allure.version>
         <aspectj.version>1.9.20.1</aspectj.version>
-        <selenide.version>6.18.0</selenide.version>
+        <selenide.version>6.17.0</selenide.version>
         <junit.version>5.9.2</junit.version>
         <lombok.version>1.18.28</lombok.version>
         <podam.version>8.0.0.RELEASE</podam.version>
@@ -25,6 +25,13 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.5.1</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
