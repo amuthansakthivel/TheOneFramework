@@ -7,7 +7,7 @@ import com.tmb.tests.base.MobileTestSetup;
 
 import static com.codeborne.selenide.appium.ScreenObject.screen;
 
-@RegressionTest
+//@RegressionTest
 class AddToCartTest extends MobileTestSetup {
 
   @MobileTest

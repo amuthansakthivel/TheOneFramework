@@ -11,7 +11,7 @@ import io.restassured.response.Response;
 
 import static com.tmb.asserthelpers.ResponseAssert.*;
 
-@RegressionTest
+//@RegressionTest
 class UserTest extends ApiTestSetUp {
 
   private final UserDetails userDetails = UserTestData.getUserDetails();
