@@ -48,7 +48,7 @@ public class ResponseAssert extends AbstractAssert<ResponseAssert, Response> {
 
   public <T> ResponseAssert canBeDeserializedTo(Class<T> clazz) {
     softAssertions
-      .assertThatCode(() -> actual.as(clazz))
+      .assertThatCode(()-> actual.as(clazz))
       .withFailMessage("Response cannot be deserialized to " + clazz.getName())
       .doesNotThrowAnyException();
     return this;

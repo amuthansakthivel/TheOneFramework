@@ -41,4 +41,15 @@ class UserTest extends ApiTestSetUp {
                     response1.jsonPath().getString("data.email").equalsIgnoreCase("janet.weaver@reqres.in"))
             .assertAll();
   }
+
+  @ApiTest
+  void updateUserDetails() {
+    UserDetails userDetails1 = UserTestData.getUserDetails();
+    Response response = UserApi.updateUser(2, userDetails1);
+
+
+    assertThat(response)
+            .statusCodeIs(200)
+            .assertAll();
+  }
 }
