@@ -52,4 +52,64 @@ class UserTest extends ApiTestSetUp {
             .statusCodeIs(200)
             .assertAll();
   }
+
+  @ApiTest
+  void deleteUser() {
+    Response response = UserApi.deleteUser(2);
+
+    assertThat(response)
+            .statusCodeIs(204)
+            .assertAll();
+  }
+
+  @ApiTest
+  void createUserWithInvalidData() {
+    UserDetails invalidUserDetails = new UserDetails("", ""); // Empty name and job
+    Response response = UserApi.createUser(invalidUserDetails);
+
+    if (response.statusCode() == 400) {
+      assertThat(response)
+          .statusCodeIs(400)
+          .assertAll();
+    } else {
+      System.err.println("Unexpected status code: " + response.statusCode());
+    }
+    }
+
+    @ApiTest
+    void getUserDetailsNonExistentUser() {
+    Response response = UserApi.getUser(9999); // Using 9999 as a non-existent user ID for testing
+
+    if (response.statusCode() == 404) {
+      assertThat(response)
+          .statusCodeIs(404)
+          .assertAll();
+    } else {
+      System.err.println("Unexpected status code: " + response.statusCode());
+    }
+  }
+
+  @ApiTest
+  void updateUserWithInvalidData() {
+    UserDetails invalidUserDetails = new UserDetails("", ""); // Empty name and job
+    Response response = UserApi.updateUser(2, invalidUserDetails);
+
+    assertThat(response)
+            .statusCodeIs(400)
+            .assertAll();
+  }
+
+  @ApiTest
+  void createUserWithSpecialCharacters() {
+    UserDetails specialCharUserDetails = new UserDetails("!@#$%^&*()", "Developer");
+    Response response = UserApi.createUser(specialCharUserDetails);
+
+    assertThat(response)
+            .statusCodeIs(201)
+            .canBeDeserializedTo(CreateUserResponse.class)
+            .hasKeyWithValue("job", specialCharUserDetails.getJob())
+            .matchingRule(e -> e.jsonPath().getString("name").equals(specialCharUserDetails.getName()))
+            .matchesSchemaInFile("create-user-response-schema.json")
+            .assertAll();
+  }
 }

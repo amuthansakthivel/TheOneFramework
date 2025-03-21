@@ -12,4 +12,9 @@ public class UserDetails {
 
   @PodamStrategyValue(JobStrategy.class)
   private String job;
+
+  public UserDetails(String name, String job) {
+    this.name = name;
+    this.job = job;
+}
 }

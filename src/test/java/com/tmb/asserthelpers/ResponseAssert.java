@@ -46,6 +46,14 @@ public class ResponseAssert extends AbstractAssert<ResponseAssert, Response> {
     return matchingRule(condition, "Predicate validation failed");
   }
 
+  
+  /**
+   * Asserts that the response can be deserialized to the specified class type.
+   *
+   * @param <T> the type of the class to deserialize to
+   * @param clazz the class object representing the type to deserialize to
+   * @return the current instance of {@code ResponseAssert} for method chaining
+   */
   public <T> ResponseAssert canBeDeserializedTo(Class<T> clazz) {
     softAssertions
       .assertThatCode(()-> actual.as(clazz))

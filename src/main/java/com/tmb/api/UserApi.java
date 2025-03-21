@@ -30,4 +30,11 @@ public class UserApi {
                 .body(userDetails)
                 .put("/api/users/{userId}");
     }
+
+        public static Response deleteUser(int userId) {
+        return  given()
+                .pathParam("userId", userId)
+                .when()
+                .delete("/users/{userId}");
+    }
 }
