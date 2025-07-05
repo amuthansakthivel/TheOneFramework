@@ -11,16 +11,16 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <allure.version>2.24.0</allure.version>
-        <aspectj.version>1.9.20.1</aspectj.version>
-        <selenide.version>6.17.0</selenide.version>
-        <junit.version>5.9.2</junit.version>
-        <lombok.version>1.18.28</lombok.version>
-        <podam.version>8.0.0.RELEASE</podam.version>
+        <allure.version>2.29.1</allure.version>
+        <aspectj.version>1.9.24</aspectj.version>
+        <selenide.version>7.9.4</selenide.version>
+        <junit.version>5.13.3</junit.version>
+        <lombok.version>1.18.38</lombok.version>
+        <podam.version>8.0.2.RELEASE</podam.version>
         <owner.version>1.0.12</owner.version>
-        <restassured.version>5.3.2</restassured.version>
-        <restassured.allure.version>2.24.0</restassured.allure.version>
-        <assertj.version>3.24.2</assertj.version>
+        <restassured.version>5.5.5</restassured.version>
+        <restassured.allure.version>2.29.1</restassured.allure.version>
+        <assertj.version>3.27.3</assertj.version>
         <faker.version>1.0.2</faker.version>
     </properties>
 
@@ -115,12 +115,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-archetype-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>3.4.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.5.3</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
@@ -153,7 +153,7 @@
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.12.0</version>
+                <version>2.15.2</version>
                 <configuration>
                     <reportVersion>${allure.version}</reportVersion>
                 </configuration>
@@ -161,7 +161,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.6.0</version>
                 <configuration>
                     <consoleOutput>true</consoleOutput>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
